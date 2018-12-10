@@ -46,6 +46,7 @@ by default, distcrack listens on *127.0.0.1* port *5000*, change the `server_hos
 - Browse to http://[server_ip]:[server_port]
 
 ## wusgi
+*coming soon*
 
 ## Client
 

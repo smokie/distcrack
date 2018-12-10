@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="wrapper">
+    <h1>Jobs</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+
+    (function ($) {
+
+        $.fn.simpletable = function (options) {
+            var that = this;
+            this.table = that;
+            this.get = function () {
+
+                $.getJSON(options.endpoint, {}, function (json) {
+                    if (!json.ok) {
+                        return;
+                    }
+                    var jobs = JSON.parse(json.jobs);
+                    $.each(jobs, function (i, job) {
+                            var tr = $('<tr/>');
+                            $.each(job, function (k, v) {
+                                if (i == 0)
+                                    $(that.table).find('thead').append($('<th/>').html(k));
+                                tr.append($('<td/>').html(v));
+                                $(that.table).find('tbody').append(tr);
+                            });
+                    });
+                });
+            }
+
+            this.get();
+        }
+    })(jQuery);
+
+
+
+
+
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('table').simpletable({
+            endpoint: '/console/jobs'
+        });
+    });
+
+</script>
+</body>
+
+</html>

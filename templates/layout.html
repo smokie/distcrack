@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>DistCrack</title>
+    <meta content="Admin Dashboard" name="description"/>
+    <meta content="Mannatthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <link href="/js/morris/morris.css" rel="stylesheet">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<!-- Navigation Bar-->
+<header id="topnav">
+    <div class="topbar-main">
+        <div class="container-fluid">
+
+            <!-- Logo container-->
+            <div class="logo">
+                <a href="/" class="logo">
+                    <img src="/images/logo-sm.png" alt="" height="22" class="logo-small">
+                    <img src="/images/logo.png" alt="" height="16" class="logo-large">
+                </a>
+
+            </div>
+            <!-- End Logo container-->
+
+
+            <div class="menu-extras topbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="menu-item list-inline-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle nav-link">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+                </ul>
+            </div>
+            <!-- end menu-extras -->
+
+            <div class="clearfix"></div>
+
+        </div> <!-- end container -->
+    </div>
+    <!-- end topbar-main -->
+
+    <!-- MENU Start -->
+    <div class="navbar-custom">
+        <div class="container-fluid">
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu">
+                    <li class="has-submenu">
+                        <a href="/console/caps">Caps</a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="/console/clients">Clients</a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="/console/patterns">Patterns</a>
+                    </li>
+                </ul>
+                <!-- End navigation menu -->
+            </div> <!-- end #navigation -->
+        </div> <!-- end container -->
+    </div> <!-- end navbar-custom -->
+</header>
+<!-- End Navigation Bar-->
+
+<div class="wrapper">
+    <div class="container-fluid">
+
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group pull-right">
+                        <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li class="breadcrumb-item"><a href="/console/dashboard">DistCrack</a></li>
+                            <li class="breadcrumb-item active">{{title}}</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">{{title}}</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="container-fluid">
+
+                {% for msg in get_flashed_messages(category_filter=['error']) %}
+                <div class="error">
+                    {{ msg }}
+                </div>
+                {% endfor %}
+
+                {% for msg in get_flashed_messages(category_filter=['success']) %}
+                <div class="text-success">
+                    {{ msg }}
+                </div>
+                {% endfor %}
+
+                {% block content %}
+                No Content!
+                {% endblock %}
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/modernizr.min.js"></script>
+<script src="/js/waves.js"></script>
+<script src="/js/jquery.slimscroll.js"></script>
+<script src="/js/jquery.nicescroll.js"></script>
+<script src="/js/jquery.scrollTo.min.js"></script>
+
+<script src="/js/skycons/skycons.min.js"></script>
+<script src="/js/raphael/raphael-min.js"></script>
+<script src="/js/simpletable.js"></script>
+
+{% block scripts %}
+{% endblock %}
+</body>
+
+</html>

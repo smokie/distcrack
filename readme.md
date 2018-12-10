@@ -1,6 +1,6 @@
 # Distcrack
 
-Distrack is a distributed, web based solution for cracking Wifi WPA/WEP passwords written in python3. 
+Distrack is a distributed, web based solution for cracking Wifi WPA2 passwords written in python3. 
 
 ## Features
   - Server: Track progress, view online and offline clients, 

@@ -1,7 +1,5 @@
 # Distcrack
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 Distrack is a distributed, web based solution for cracking Wifi WPA/WEP passwords written in python3. 
 
 ## Features

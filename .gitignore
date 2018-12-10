@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+*.pyc
+__pycache__/
+*.log
+pip-selfcheck.json
+bin/
+public/plugins
+client/*.hccapx
+uploads/caps/*.*
+uploads/wordlists/*.*
